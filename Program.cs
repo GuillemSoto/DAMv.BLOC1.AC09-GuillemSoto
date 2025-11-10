@@ -1,4 +1,4 @@
-﻿public class Program
+public class Program
 {
     public static void Main()
     {
@@ -25,6 +25,28 @@
         switch (menuNum)
         {
             case 1:
+                int[] numbers = new int[20];
+                string even = "";
+                string odd = "";
+                Random RNG = new Random();
+                for (int i = 0; i<numbers.Length; i++)
+                {
+                    numbers[i] = RNG.Next(1, 100);
+                }
+                foreach (int i in numbers)
+                {
+                    Console.Write(i + " ");
+                    if (i % 2 == 0)
+                    {
+                        even += i + " ";
+                    }
+                    else
+                    {
+                        odd += i + " ";
+                    }
+                }
+                Console.WriteLine("\n"+even);
+                Console.WriteLine(odd);
                 break;
             default:
                 Console.WriteLine(ExitMsg);
