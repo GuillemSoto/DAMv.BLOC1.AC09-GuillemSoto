@@ -1,4 +1,4 @@
-﻿public class Program
+public class Program
 {
     public static void Main()
     {
@@ -20,15 +20,32 @@
                 validNumber = false;
                 Console.WriteLine(InvalidNumber);
             }
-            
+
         } while (!validNumber);
         switch (menuNum)
         {
-            case 1:
+            case 3:
+                int[] numArray = new int[10];
+                Random numberGen = new Random();
+                for (int i = 0; i<numArray.Length; i++)
+                {
+                    numArray[i] = numberGen.Next(1, 10);
+                }
+                foreach(int num in numArray)
+                {
+                    Console.Write(num + " ");
+                }
+                Array.Reverse(numArray);
+                Console.WriteLine();
+                foreach (int num in numArray)
+                {
+                    Console.Write(num + " ");
+                }
                 break;
             default:
                 Console.WriteLine(ExitMsg);
                 break;
         }
     }
+
 }
